@@ -1,4 +1,4 @@
-.idea/
+.idea/*
 log/
 sdh-generator/target/classes/generator.properties
 hs_err_pid*
