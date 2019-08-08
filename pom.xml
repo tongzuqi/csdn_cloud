@@ -32,6 +32,7 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <version>2.1.4.RELEASE</version>
         <zipkin.version>2.10.1</zipkin.version>
+        <lombok.version>1.18.2</lombok.version>
     </properties>
 
     <dependencies>
@@ -43,6 +44,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- lombok bigen  -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 
