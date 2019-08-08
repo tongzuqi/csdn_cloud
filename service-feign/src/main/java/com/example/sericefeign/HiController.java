@@ -1,6 +1,7 @@
 package com.example.sericefeign;
 
 
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,9 +13,22 @@ public class HiController {
     @Autowired
     SchedualServiceHi schedualServiceHi;
 
+    @Autowired
+    private AmqpTemplate template;
+
+
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
         return schedualServiceHi.sayHiFromClientOne( name );
+    }
+
+
+    /**
+     * mq test
+     */
+    @GetMapping("test_mq")
+    public void contextLoads(){
+        template.convertAndSend("queue", "瓦尔克莉");
     }
 
 }

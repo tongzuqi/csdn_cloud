@@ -10,9 +10,12 @@ spring:
   zipkin:
     base-url: http://localhost:9411
   rabbitmq:
-    addresses: 47.98.114.150
+#    addresses: 47.98.114.150
     username: admin
     password: admin
+    host: 47.98.114.150
+    port: 5672
+    virtual-host: /
 feign:
   hystrix:
     enabled: true
